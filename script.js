@@ -30,4 +30,4 @@ if(salario >= 3001){
     salario = salario * 1.05
 }
 
-console.log(nome, salario)
+console.log("O nome do colaorador e: ", nome, "e seu salario, ja com aumento, e: ", salario)
