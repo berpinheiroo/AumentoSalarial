@@ -1,33 +1,39 @@
-PerguntarNome()
-PerguntarSalario()
-var salario = PerguntarSalario()
-var nome = PerguntarNome()
+var salario
+var nome
+var continuar = 's'
 
 function PerguntarNome(){
     nome = prompt("Qual o nome do colaborador?")
-    return nome
 }
 
 function PerguntarSalario(){
     salario = prompt("Qual o salario do colaborador?")
-    return salario
+
+    if(salario <= 1500){
+        salario = salario * 1.20
+    }
+    
+    
+    if(salario >= 1501 && salario <= 2000){
+        salario = salario * 1.15
+    }
+    
+    if(salario >= 2001 && salario <=3000){
+        salario = salario * 1.10
+    }
+    
+    if(salario >= 3001){
+        salario = salario * 1.05
+    }
 }
 
-if(salario <= 1500){
-    salario = salario * 1.20
+function PerguntarContinuacao(){
+    continuar = prompt("Deseja continuar? Digite 's' para sim")
 }
 
-
-if(salario >= 1501 && salario <= 2000){
-    salario = salario * 1.15
-}
-
-if(salario >= 2001 && salario <3000){
-    salario = salario * 1.10
-}
-
-if(salario >= 3001){
-    salario = salario * 1.05
-}
-
-console.log("O nome do colaorador e: ", nome, "e seu salario, ja com aumento, e: ", salario)
+while(continuar == 's'){
+    PerguntarNome()
+    PerguntarSalario()
+    PerguntarContinuacao()
+    console.log("O nome do colaborador e:", nome, "e seu salario, ja com aumento, e:", salario)
+ }
